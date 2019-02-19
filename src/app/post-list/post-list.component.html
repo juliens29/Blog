@@ -1,0 +1,25 @@
+
+
+
+<div [ngClass]="{'row border rounded mt-2 mb-2 p-5': true,
+                'alert alert-light': postloveIts == 0,
+                'alert alert-success': postloveIts > 0,
+				'alert alert-danger': postloveIts < 0}">
+	<div class="col-12 col-lg-6">
+		<h4 class="text-left">{{ posttitle }} </h4> 
+	</div>
+	<div class="col-6 col-lg-4 text-left">
+		<small class="">{{ postcreated_at | date: 'EEEE d MMMM y, h:mm a' | uppercase }}</small>
+	</div>
+	<div class="col-6 col-lg-2 text-right">
+		<small class="">{{ postloveIts }} Love(s)</small>
+	</div>
+	<div class="col-12 mt-2 mb-2">
+	{{ postcontent }}
+	</div>
+	<div class="col-12">
+		<button type="button" class="btn btn-success"(click)="increaseLove()">Love it</button>
+		&nbsp;&nbsp;
+		<button type="button" class="btn btn-danger" (click)="decreaseLove()">Don't love it !</button>
+	</div>
+</div>
